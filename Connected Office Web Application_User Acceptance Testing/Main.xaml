@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="850.4,3492" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="850.4,3352.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="80">
+    <scg:List x:TypeArguments="x:String" Capacity="42">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -46,7 +46,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="108">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -104,8 +104,10 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="592,3427.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="592,3288" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="ZoneTableData" />
+      <Variable x:TypeArguments="sd:DataTable" Name="CategoryTableData" />
       <Variable x:TypeArguments="sd:DataTable" Name="DeviceTableData" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -113,14 +115,16 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange AddHeaders="True" DataTable="[DeviceTableData]" DisplayName="Read Range Device Sheet" sap:VirtualizedContainerService.HintSize="529.6,97.6" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="B1" SheetName="Device" WorkbookPath="D:\Connected Office Test Data.xlsx" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Home Page - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="529.6,3166.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V2">
+    <ui:ReadRange AddHeaders="True" DataTable="[ZoneTableData]" DisplayName="Read Range Zone Sheet" sap:VirtualizedContainerService.HintSize="529.6,97.6" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="B1" SheetName="Zone" WorkbookPath="D:\Connected Office Test Data.xlsx" />
+    <ui:ReadRange AddHeaders="True" DataTable="[CategoryTableData]" DisplayName="Read Range Category Sheet" sap:VirtualizedContainerService.HintSize="529.6,97.6" sap2010:WorkflowViewState.IdRef="ReadRange_3" Range="B1" SheetName="Category" WorkbookPath="D:\Connected Office Test Data.xlsx" />
+    <ui:ReadRange AddHeaders="True" DataTable="[DeviceTableData]" DisplayName="Read Range Device Sheet" sap:VirtualizedContainerService.HintSize="529.6,97.6" sap2010:WorkflowViewState.IdRef="ReadRange_4" Range="B1" SheetName="Device" WorkbookPath="D:\Connected Office Test Data.xlsx" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Home Page - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="529.6,2752" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,2940" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,2525.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="ruan.burger@gmail.com" Name="userName" />
             </Sequence.Variables>
@@ -161,31 +165,31 @@
                 <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Identity/Account/Login" DesignTimeRectangle="332, 729, 87, 48" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl id='login-submit' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='login-submit' tag='BUTTON' type='submit' class='btn btn-primary' aaname='Log in' check:innerText='Log in' /&gt;" Guid="57081a01-6033-4a32-b667-0d8200301101" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAA0CAYAAADllEQWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANYSURBVHhe7ZzNahNRFMd9Ci0+gg/gEwi+QHZZCW50UaQ7V4a46MaFmyJ0KwGRpNJFoIuIlAQtpZDFENCBUoIlTIc2nZZpmw/C33PmI5lJbmuaj5ukPQd+i9x7Zu7Mby7n3gQmDyChLUS2xhDZGmNAdu7XXzx/v43HLzfx8MU34ZawN/bHHvsjJvvdFwNP3mzh0evvWFouEiXh1hQ9f+yRfUajK5ufBCeI5ElR9HxGZ3hXNk99f0arDhRGgX2y1zC6srnWyKyeNEXPaxhd2Vzc1QcI48BewxDZU0Zka0Rka0Rka0Rka0Rka0Rka0Rka0Rka0Rka0Rka+T+yU4fwmjRTZ7VkVL1T5Hpyd5w4NC5HPNA3T8r1iyYIvvuI7I1IrI1Mheyn2VtGKdtNDr++Oh04Jy6yH3dU+SX8XbXxdFlkEvhWMdYzQ873gGKfKxlRdqojgfH8rWYbngh1HZSx+qH6PGjM3PZyZ0LNHjQVhNGxUZu10bevIDj3W8bxc2o8D2kzDZ3oHHmokC5ud06jDNKbvmCxpJt87htmMF1FGr+WLBtJGLnGI3ZyuadATtyHaTSfX3rvV3DStgWnLNBopLR3OUKMtb4sgcfbgX5E25vovA5bBudmcpOlK+88YxtVbkoBbOYBGSjn+nGM4O5S5vjlxGewU9juSW8MprUwQ8h3j4KM5Xty7tCfk3dv0QlhsP86X/OWPShcY6P/XnMkGXrfzU7nkuE17DT1z4Ciyf7kkpOfx4jsm+++eHKSK9eZmqcfc3D2Tr3FlqRrepn1mxUecAhF8jEnv9w+Jyx2pr+Eyxk91x2w6p726g4NaSC2Xnj1q91gcx69LwkyuVkEmM7yPO5yg5MkudYV1JG1EGr+0YvN5k/jn2RAO11j6r0RSUmOiC9j1y1GezDKVq8Lz5E8l7XbN2EW7/f++r+OeDOyF6p8H6YFtsf6v554G7IDhfTlotP/QvtHLFgsi0Yl02Y1WBxJAr7tDB69btNs9pQHDM/LJjsA+RqtDjyLA6DfyG0HGSyZUX+fLFgshcbka0Rka0Rka0Rka0Rka0RpWx5NW8aXPNqnrx0OnmufelUXqeeNDe8Ts0hfxQwCYb4o4Aw+Enw1Odaw8VduB3sjf1FZ3QYA7IlphXAPx7Tds4RvVnQAAAAAElFTkSuQmCC" InformativeScreenshot="73ee215d54f8d0b54328d03aa8ad21a8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Devices'" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Zones'" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/" DesignTimeRectangle="9, 521, 285, 50" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Devices'" FullSelectorArgument="&lt;webctrl aaname='Devices' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Devices' tag='A' type='' class='nav-link text-dark' check:innerText='Devices' /&gt;" Guid="79cd1544-5ff0-4263-a28e-482d189ab1f2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASEAAAA2CAYAAACIuS+MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAU0SURBVHhe7dvRS1tnGIDx/VG7sTcKDikVKrkQYSCIIAiKFR0trbRMRoWJiILSQkOZGehNpBARQiFjkAutDAMToUYQBQlIBWmh1+/OSd73nC/pSaswP6V5XvjBevKd5OwiD19OzA82Ekzl82c5+vQRAK6djSaICAHwy0YTRIQA+GWjCSJCAPyy0QQRIQB+2WiCiBAAv2w0QUQIgF82miAiBMAvG00QEQLgl40miAgB8MtGE0SEAPhlowkiQgD8stEEESEAftlogogQAL9sNEFECIBfNpogIgTALxtNEBEC4JeNJogIAfDLRhNEhAD4ZaMJIkIA/LLRBBEhAH7ZaIJaJEJn72RxtEt+vNMlvb9tyG7SGgBe2GiCrilCW7PBG74jUXtfn4zMLEt6q5x87nWou55hSR8lrAHghY0myH+EXO2jy1I4Szj//3bOTgi4LWw0QR4i9GAtftOflaWQfSy9nXGI2ibWZPvCORfAd81GE+Q5QubfZfnZHg+M5I7rHwfw3bLRBN1QhAKFl93xmicbsuc+XilJZn5Meu+HH6GCx++mZGBmRfIn+nhpQe7ZuZ2zknd3UhdFmY52Wv3y4n1w7GhNhmz9nWC9ra2ur0jx7bKMj6akPXrObun9Jdihueu+dU1qr5SVmaeD0nPXXq9LekYnJRNeh7MOaFU2mqCbi9BR8Xm8xg3D4ZqMRG/gBp3Dkj4M1+3LiwE73i1zJT035AbqUbYWt2YRuihL5pFG5QtXvaaPchD8f/ckrQlMb+lzAS3ORhN0gxFy10Rv+CAug3YsJdN/1z6mHeyvyJDubtp+z8tBcGx7tV/XdUjvn/vR8xZexTus6GNeYoQ+SH4pFa1tG5qV3OGH2vrzsuSWgl1Odd1lr+lYMhO2rkMebuprXxwHO60FSe+EzwXARhN0yyLk7mJmarGpra/I2hNb+1xy4cev9yvxfaXBFf3o5O6Qnsn6uZ6fFKHzvExFx8Ykc6prG136msqSfmD/7pCeX9ekcKJRAxCx0QTdXIT2NifjNQNpKQbHdt8Mx8easr/zcd/0esyJje2Yqq+XFKGdWWmzY81CGbjKNYVro+dUbfeHZTpXcuIFtDYbTdBNRagi6zPxvZh7L99Vj+9mrxKhIGS5sej4+GbFCVu3zP3jvF5ShC6zWwtc9Zp2d1Zkaqj7ixj1LBUJERCw0QTdTITqb+DqN1jhY+7upO6jTxOnWRmJ1mclM6P/nVqQgvuNWVKETtxjX/k4dtVrMudlyb9ydkbht3hJ64AWY6MJ8hyhs33Jrz52AtQlQ1nn5xvnRZlO2WMpmXq7LwcWEz13se4Gr3NfZmBYhvRc90Z1VVKEPh0H58a7sbaJdHwP57Qkmbl0bd2lr6ksmfkFWd8/jh7fK85Kr71uGMbq6wKtzUYT5CFCTaXkYa4hFoGvfc0davyq+6DwrGGNs7MyiREKnAWB6XPPdcXrLndN9Tem63XJSM7jb+WAW8xGE+Q7Ql3SMzAmU6sbUqwknGeO/pLFhj/4+6l/UMZfb8h242/Nwm+5nJ+BJN7faRah0EVZcq8nZaAv3hVVf2Q7n69/nm9eU0XyfwTP0+/cDwr/oPHpgmRKlfh5gBZnowm6pggBQBM2miAiBMAvG00QEQLgl40miAgB8MtGE0SEAPhlowkiQgD8stEEESEAftlogogQAL9sNEFECIBfNpogIgTALxtNEBEC4JeNJogIAfDLRhNEhAD4ZaMJIkIA/LLRBBEhAH7ZaIKIEAC/bDRBRAiAXzaaICIEwK/aiPwHC6Xz8J6eZSYAAAAASUVORK5CYII=" InformativeScreenshot="596589cda1d74211542f9504c8634307.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Home Page - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Zones/Create" DesignTimeRectangle="9, 338, 285, 50" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Zones'" FullSelectorArgument="&lt;webctrl aaname='Zones' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zones' tag='A' type='' class='nav-link text-dark' check:innerText='Zones' /&gt;" Guid="fa0f0f2d-1846-4cf4-8d41-2277b70ba4b9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASEAAAA2CAYAAACIuS+MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASgSURBVHhe7dvRS1tXHMDx/VG+6IsDRxgVJnkoFwqDIQgdllbUlzWsIGWBFREFSx8MA31oGFQEZRAKFiEPpqXEBwkYC+JAAsOCbNDn347J75d7klzNIt4zkO8PPg87ObnmZV/uuUm/shE3jS9f5OSfvwEgdTaaICIEICwbTRARAhCWjSaICAEIy0YTRIQAhGWjCSJCAMKy0QQRIQBh2WiCiBCAsGw0QUQIQFg2miAiBCAsG00QEQIQlo0miAgBCMtGE0SEAIRlowkiQgDCstEEESEAYdlogogQgLBsNEFECEBYNpogIgQgLBtNEBECEJaNJogIAQjLRhNEhACEZaMJIkIAwrLRBKURobIsjHwtQ//FUjnh/QDuMhtN0P8boYnfDhLeD+Aus9EEhTyONWQzn4kjFC3L7kXSPgB3mY0mKFyE6rvPZLh9F5SVxYPkfQDuNhtNUKAIne3IzJgFyB3DVstST9hX3S/Kwnwk39jesXG5P/+LbBw0Ovfuv2hfa+hJUSpHO+59WRltrmVkYn5Ztv/09qvDgzcd1x+NJiX3uizVrjuy6l5Bcj2fY1lKjc59AAZnowkKEaFTKT71j2EvpPS5e09DSquRd6fULSMP1t7H4fIjlM3KhBe4tsl1qXh/o7L1WCPVa3jWhUxDVHnz8IrP8VAKJ/H1ANyMjSYo/Qgd/jHXcQzLfzjv2dNxVIueyab+z17/tCO5KH5v+wjnR2hkXHKl49b+2rpMtdcjeVXT/Ufr8sDWXQS3z9zaxbmUf7fgZCS3d/m5ypJvBy2SlY/6WT8fS+l1QTYT7q4ADMZGE5RyhE6KMuXdpSQfwxruTinek9vtjFTV3ZnYa8P2lb4foR/9O55T2ZiNr7Ww31rfXRtvr3Vcv+GOibo+tPjOrfnf7Lm7r9V3UvnLrg3gNthogtKM0LELQr9j2CX/7iPhyNP1/Kd61ZoqLem604pQZ5iu1LzOuTsWZnteG52ck5XyafyZANyYjSYovQhVt/xnK1kXhK6Hy23+3UcaETqWwpN47Urt6zSk8nZZpiMvoE0ZmdpqHfsA3JyNJiilCH3qOoa5Y1TSt2Et/p2KPZuJX/ePY/fW3rfWB4qQW1uNg9J93LvW2YFs/OrdGc12/i0Ag7PRBKUQoQt359F9DOvzXKXj4bU9OHbr9VpRZrK6PvJ9/KB5wAjV3f57tv/ywfdRHKL6UVlePS9IqfnfZVl5vi4le/3ivPmtWvtvPd2RQ30fgJux0QTdfoQOSz95x7A+vCNQaan3WUwsI9P+UWjACPW/vgtlc981/+RkLJLFhG/2AAzGRhN0+xHyj099dQWk50eC32blh59fymbt+h8r9o9QS3Xvpcw8sh81Opc/Qnw0Jytva3pcrEkx/1jue8+Dhr+LZDpfkG1+IwTcChtNUHoPpgEgiY0miAgBCMtGE0SEAIRlowkiQgDCstEEESEAYdlogogQgLBsNEFECEBYNpogIgQgLBtNEBECEJaNJogIAQjLRhNEhACEZaMJIkIAwrLRBBEhAGHZaIKIEICwbDRBRAhAWDaaICIEICwbTRARAhCWjSaICAEIqzUi/wILdq58c91haQAAAABJRU5ErkJggg==" InformativeScreenshot="0c47b2b3f2372eaf9401a6ba1caab92b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create Zone - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DeviceTableData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="433.6,1657.6" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ZoneTableData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="433.6,1244" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,1530.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,1116.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
+                    <uix:NClick ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
                       <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Devices" DesignTimeRectangle="518, 263, 38, 38" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl aaname='              ' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='              ' tag='IMG' type='' class='' /&gt;" Guid="3b55476d-be04-4239-8299-4c355c1f9968" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAUuSURBVFhH7ZjZL11bHMcpQhNjSVNDhScepGkFJWkEFVIaEVNfJNKEUBGEhz4YKiVUDAlRQ+KdUoknw98gIWJoi4SqoQihSSWG+t1811lr3b3POc7Z+zhu7k3uJ1k5OWv99m999xp/++dA/xH+F2pvbBJ6eXlJa2trNDo6ShUVFRQbG0v37t0jFxcXcnBwYL8+Pj4UExND5eXlNDIyQisrK+w5W9Et9Pv375SYmEhubm7k6OjIhFkrsHN1daX4+HhaX1/nnvShWejq6irl5eXJUVMWZ2dnNqIhISEUFhZGoaGh7D/qjW2dnJwoOzubvn79yj1rw6rQ8/NzGh8fJ09PT1WH3t7elJCQQG1tbbSxscGt1WxublJHRwclJSWxpaB83sPDgz5//sz8a8Gi0D9//tDbt2/pzp07sgOMUk1NDROhdc3Bz48fP+jdu3eqUYbf6upq1m6Na4VeXFywjSCcojx//pxmZma4hW3Mzs5Samqqyu+bN29Yf5YwKxQjhSkVjvDmJSUldHV1xS1uDgZBOVPv37+3OENmhY6NjalEdnd3a15LWoG/jx8/qsR++vSJt5piInRvb48CAwPlw2VlZbzldqisrJR9+fv70/b2Nm9RYyL01atX8sHw8HC7Trc54P/Jkyeyz9zcXN6iRiX06OhIHiPYnXNzc7xFG4ODg5SRkUH9/f26XnB+fl6ez15eXnRwcMBb/kYKhWNMs3iznJwcXZ39+vWLgoOD2bMPHz6kk5MT3qKN/Px82XdhYaFJ31Loz58/5Rnn7u5Ov3//5i3aOD4+lmsbaw2zo4fT01N5qUCH8VqVQqenp+Ub4ZzTy02FgrS0NKlhcnKS1xqQQhsbG6VRc3Mzr9WOPYTiuhUa6uvrea0BKTQ9PZ0ZINLRu4mAPYQuLi7KiCw5OZnXGpBCsQFggGDh7OyM12rHHkJxCSDYgQ/4UiKF3r17lxkgRLPE/v4+9fb2UldXl6q0trayowU+sCk+fPhgYoObCBeKJRAmwgfiXSVSqBjyiIgIXmMKjiA/Pz9mZ2vBOW3p6IqKimJ20KNEt1BfX19Vx3oLRt2S0OjoaGZ3rVCtU4+pa29vp5aWFlVBrCnOQaxz7FpjG0Rku7u73JN5rE692Ezo7N+wmQICAnitASlUHLYYcty9erGH0KWlJbkEEaQrkUIRuMIABdOkF3sI7ezslBrq6up4rQEpdGpqShq9ePGC12rHHkJfvnwpNUxMTPBaA1IoFrkyKEGQoIebCkV/4hzGJ/XW1hZvMSCFIqzCR5Z4IwTQelCGeUFBQUy4HgoKCmTfr1+/vj7MA4eHh/KtEMjq3VR9fX1s+np6enTFsgsLCzJwxqmD288YlVCQlZUl3+zx48e89nZ5+vSp7DMzM5PXqjERurOzw84w8SCSYLcJEhCirwcPHrBEhTlMhAJk6cTD+JxFMHEbn8sDAwNs44i+hoaGeKspZoUiEdDU1KQSi5HVs+6sgZFUiqytrdWfgABIsZSWlkpHKCkpKTYF1UqwQUWQLkpRUZFtKR0BRrCqqkqVzcDubGhoYOecniQZ7DFLyrQl/CK1c6MkmQABCtKDiIhEByjIf+I+xlFkfDgL8CWJIBufFcbhIS4VpHC0BkBWhQqWl5dZAlaZNhQFdffv32ch2qNHj1iGBf+VoycK1iWOIJydetAsVIDc/bNnz1iqW0Q61grsYB8XF8dy+bagWyjA2vz27RsNDw+zdGRkZCSLI8Vo4xf/cWEUFxczuy9fvmhe0+awSeg/D9FfqrDBdNieVugAAAAASUVORK5CYII=" InformativeScreenshot="fb3394de84b9353c55cd8e0df8eb49e2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Devices - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Zones" DesignTimeRectangle="482, 325, 38, 38" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl aaname='              ' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='              ' tag='IMG' type='' class='' /&gt;" Guid="564e2254-0b01-4db4-b5f3-6763fd0f4803" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATESURBVFhH3ZhJL21LGIaJgd5ENyDamAn/QKIJIpiYEmZ6gjBGdAOTE9FOMJVIjDUTQYQpfoIuIvow4Lt51q0qy7b23mttnHPPfZNKVqr56l1VX1th8pfg/0307e1NLi8vZWtrS8bHx6W2tlYyMzMlOjpawsPDrcZ3RkaGVFdXy+joqGxubsrFxYW1NhR4Jnp7eysDAwMSHx8vEREREhYW5qoxNy4uTnp7e+Xm5kZJcw/XRK+urqS7u1tSU1MdicTGxkp6errk5eVZjW/6nOYmJydLW1ubdStuEZQoV7W/vy+5ubkfNouMjJT8/HxpbW2VnZ0deX5+ViveQd/e3p60t7dLQUGBtcYuIysrS3Z3d+X19VWt8I+ARCG5tLQkMTExRjj6V1xcLEdHR/Lw8KBmBsfj46O1pqyszJKh5aHLCwsLQXXXL1EWTk5OGoG0tLQ0WVlZCdkgNFZXV63TtMuemJgIKNeRqD5Ju6CioqIvE/RFSUnJh9Odn5/3qwaORNFJ+3W3tLTI3d2dGv0+3N/fW/qryaIG6LsTPhHFunNycgxJTvInSGpAlpPV++GP8be++EQUF6QXoZPffd1OYA+7znZ0dKiRd3wgijNPSUmxJnMdGI4XPD09SVNTkzQ2NlpW7gUYmFaBpKQkub6+ViP/whDlr/r7+81f4YK8nuby8rJZPzs7q3rdgb0qKyvN+s7Ozg/7G6LoBWGRSThmfJ5X/Pr1y2w0Njamet3j+PhYoqKirPVwOTs7UyM2oiQYOnYTcbw4c42vEkVdiGCsh8vGxoYasRElC9KbEBZDwVeJgp6eHiNjeHhY9dqI1tTUmAn+fFkwfAfRg4MDI6O8vFz12oiSOzJIxuOUYLjBdxB9eXkxtkIGpmGIEhV8B52AC8K6IeXb6urqDFFuyGnO4uKiJSMQsrOzLRlw0jBEtQ8jlwwE/KQmE2praGhQ0pyBMTMPThqeieLM7ZuG0urr65U0ZwQk6uXq5+bmLC/h2+wGWVFR4ThnZmYmaNQKePXamKhr/rQxJSQkWDLINTQMUapFvQnlQyj4DqKHh4dGBtWAhiFKSasnUHiFgu8g2tfXZ2QMDQ2pXhtR6m4dQgljXrMf8FWi7FlYWGith8v6+roasRH9LyQlJycnxqixldPTUzViI0pKxeOA3qi0tFSNuAfOXK+fnp5Wve5RVVVl1qN+jmke4AWDxwEm4sNIZr0A14Uzx096VZ21tTXjyxMTE/0nzhr8if4ryoPfBQKN3re5uVn1vuMTUZ5Z7PULhRcF2E+BvJcsSe+HPz8/P1ej7/hEFPDMostlroOS9ifIQrKrq8tcOYa0vb2tRj/CkSiPADyz6L9EECfrtYYKBk5Sk6RNTU15e4AAkOKZRQuhoRIY2FcJYzh2naSNjIwEfCzzSxRAiGcW7dtonADVIoWYF8tmLn4SF2Q/RWQHOkmNgEQBAihNfB+1qBaJYNQ4lA8kE76gj9hNWCTi2H+YhuGgk8FIgqBENYhcvGDwOGDfTDeiGukZuSSNb50F+Tb8JO9ZTtbtD66JauCIeRyAmM4N3DTmEhapcH2duRt4JgrQXR4HqLspabFeEm6uFv2j8U0+Sao2ODhoJRjE7lANMSSifwJ/CVGRfwB/uajJNg21nQAAAABJRU5ErkJggg==" InformativeScreenshot="1e0be1cb8d80de206eb1f545c98fcbd4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zones - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  DeviceName'" sap:VirtualizedContainerService.HintSize="337.6,165.6" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[CurrentRow.Item(&quot;DeviceName&quot;).ToString]">
+                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  ZoneName'" sap:VirtualizedContainerService.HintSize="337.6,165.6" sap2010:WorkflowViewState.IdRef="SetValue_3" Text="[CurrentRow.Item(&quot;ZoneName&quot;).ToString]">
                       <ui:SetValue.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c1b4e04c-8ccd-4191-90a8-0aa46d9a4664" InformativeScreenshot="184d0bcb882d3ca18d7f32080875ac0e" Selector="&lt;webctrl id='DeviceName' tag='INPUT' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="03f4c62a-ba15-4ae6-b0d7-a0e7e8291ef7" InformativeScreenshot="9f3b1e8b9b4bf5ad12c44e7909331e1d" Selector="&lt;webctrl id='ZoneName' tag='INPUT' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
@@ -195,139 +199,9 @@
                         </ui:Target>
                       </ui:SetValue.Target>
                     </ui:SetValue>
-                    <uix:NSelectItem DisplayName="Select Item 'Category ID'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[CurrentRow.Item(&quot;CategoryName&quot;).ToString]" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
-                      <uix:NSelectItem.Items>
-                        <scg:List x:TypeArguments="x:String" Capacity="50">
-                          <x:String>Computers</x:String>
-                          <x:String>Access Control</x:String>
-                          <x:String>Speed Sensor</x:String>
-                          <x:String>asdf</x:String>
-                          <x:String>Cat1</x:String>
-                          <x:String>Temperature Sensor</x:String>
-                          <x:String>Speed Sensor</x:String>
-                          <x:String>Motion Sensor</x:String>
-                          <x:String>Motion Sensor</x:String>
-                          <x:String>Plat-Cat</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>TV</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>Temperature Sensor</x:String>
-                          <x:String>Access Control</x:String>
-                          <x:String>Camera1</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>rr</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>Camera 1</x:String>
-                          <x:String>Access Control</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>Speed Sensor</x:String>
-                          <x:String>Temperature Sensor</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>Motion Sensor</x:String>
-                          <x:String>TEMPERATURE Sensor</x:String>
-                          <x:String>Access Control</x:String>
-                          <x:String>Access Control</x:String>
-                          <x:String>Temperature Sensor</x:String>
-                          <x:String>Can anyone else see my Category?</x:String>
-                          <x:String>test</x:String>
-                          <x:String>Wireless</x:String>
-                          <x:String>Access Control</x:String>
-                          <x:String>dd</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>Phone</x:String>
-                          <x:String>Motion Sensor</x:String>
-                          <x:String>Fitness J</x:String>
-                          <x:String>Camera 1</x:String>
-                          <x:String>Temperature Sensor</x:String>
-                          <x:String>Temperature Sensor</x:String>
-                          <x:String>Motion Sensor</x:String>
-                          <x:String>Motion Sensor</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>Temperature Sensor</x:String>
-                          <x:String>Camera</x:String>
-                          <x:String>Speed Sensor</x:String>
-                        </scg:List>
-                      </uix:NSelectItem.Items>
-                      <uix:NSelectItem.Target>
-                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Devices/Create" DesignTimeRectangle="332, 496, 500, 48" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'Computers'" FullSelectorArgument="&lt;webctrl id='CategoryId' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CategoryId' tag='SELECT' type='' class='form-control valid' aaname='Category ID' /&gt;" Guid="f1f89b81-7c5f-4475-a2dc-0969771663fc" InformativeScreenshot="c6cc6a97b3d18857032de825ec2c5f4b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create Device - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target DesignTimeRectangle="332, 456, 105, 30" ElementType="Text" FriendlyName="'Category ID'" FullSelectorArgument="&lt;webctrl aaname='Category ID' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Category ID' tag='LABEL' type='' class='control-label' check:innerText='Category ID' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NSelectItem.Target>
-                    </uix:NSelectItem>
-                    <uix:NSelectItem DisplayName="Select Item 'Zone ID'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[CurrentRow.Item(&quot;ZoneName&quot;).ToString]" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
-                      <uix:NSelectItem.Items>
-                        <scg:List x:TypeArguments="x:String" Capacity="50">
-                          <x:String>Red</x:String>
-                          <x:String>Iron Workshop</x:String>
-                          <x:String>Boilermaker Room</x:String>
-                          <x:String>DeleteZone1</x:String>
-                          <x:String>Boilermaker Room</x:String>
-                          <x:String>Terrazzo</x:String>
-                          <x:String>Linemen Assembly</x:String>
-                          <x:String>DeleteZone2</x:String>
-                          <x:String>Terrazzo</x:String>
-                          <x:String>Tile Setting Bench</x:String>
-                          <x:String>Labor Office</x:String>
-                          <x:String>Safety Office</x:String>
-                          <x:String>Test Zone 1</x:String>
-                          <x:String>Safety Office</x:String>
-                          <x:String>Stucco Mason Building</x:String>
-                          <x:String>ZoneName</x:String>
-                          <x:String>Boilermaker Room</x:String>
-                          <x:String>Terrazzo</x:String>
-                          <x:String>Safety Office</x:String>
-                          <x:String>Environmental Office</x:String>
-                          <x:String>Stucco Mason Building</x:String>
-                          <x:String>Iron Workshop</x:String>
-                          <x:String>Stucco Mason Building</x:String>
-                          <x:String>Environmental Office</x:String>
-                          <x:String>ZoneName</x:String>
-                          <x:String>Boilermaker Room</x:String>
-                          <x:String>Linemen Assembly</x:String>
-                          <x:String>Meeting Room G01</x:String>
-                          <x:String>DeleteZone1</x:String>
-                          <x:String>Test Zone 1</x:String>
-                          <x:String>Terrazzo</x:String>
-                          <x:String>Safety Office</x:String>
-                          <x:String>Linemen Assembly</x:String>
-                          <x:String>Linemen Assembly</x:String>
-                          <x:String>Labor Office</x:String>
-                          <x:String>Labor Office</x:String>
-                          <x:String>Terrazzo</x:String>
-                          <x:String>Test Zone 1</x:String>
-                          <x:String>Boilermaker Room</x:String>
-                          <x:String>Environmental Office</x:String>
-                          <x:String>Iron Workshop</x:String>
-                          <x:String>Environmental Office</x:String>
-                          <x:String>Iron Workshop</x:String>
-                          <x:String>Environmental Office</x:String>
-                          <x:String>Boilermaker Room</x:String>
-                          <x:String>Iron Workshop</x:String>
-                          <x:String>Tile Setting Bench</x:String>
-                          <x:String>Safety Office</x:String>
-                          <x:String>Labor Office</x:String>
-                          <x:String>Availability Zone Sudo</x:String>
-                        </scg:List>
-                      </uix:NSelectItem.Items>
-                      <uix:NSelectItem.Target>
-                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Devices/Create" DesignTimeRectangle="332, 603, 500, 48" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'Red'" FullSelectorArgument="&lt;webctrl id='ZoneId' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZoneId' tag='SELECT' type='' class='form-control' aaname='Zone ID' /&gt;" Guid="8e51856d-ced6-486d-8289-be9eaca3dd79" InformativeScreenshot="5954818a5245e2e0d6cdc528d29f4560.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create Device - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target DesignTimeRectangle="332, 563, 70, 30" ElementType="Text" FriendlyName="'Zone ID'" FullSelectorArgument="&lt;webctrl aaname='Zone ID' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zone ID' tag='LABEL' type='' class='control-label' check:innerText='Zone ID' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAiCAYAAAD4d09GAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOLSURBVGhD7Ze9ayJBGIfvX7EI5Cqt7BLSiIUSSNIkHAeGFIYUSgpJKlPIBpQUKVIIKYTAFsIWEeUIgRCEoCkUiwvCIYHDHAQMBAwELITfvbOOuu6Xo+EgB/PAFDs7uzPz7LzvzH6BRAgpShApShApShApShApShApShApShApShApShApShApSpCxqGcN2wtf4ZlSFg+v0eWPfF5ekN+h8e5o6PAaRj1tnY/Hu4TwWgxJtYyWy8TGonpPqN/do2JbrnGyyV6awu07b/+pcRMVw/lwXkUVJ6cZxCMheHVxIRwUn3jrSYRCr1fNYHnBh2S5x2s+O26iMqjz6wlem7iI+ui+/Tyni3ovI+mlkDsq43/RNJcoRr+JsyC1Wcnioc/rOFNE9XB7RJZXMqg4hFy3WYKytw4/ydRz2NI6dtMltMztaxm6H0X+GejcZbEb9PP2W0g6LPdONYf45hIWeS7ZSORQMc7ckTlFEd1ijNoEcNbkFRxXUb1yigYZgFK1X0vty5ge295IBvmbQdwXzhMIM2lBGpBRli4qAiUdhT+SRUHPEyXKfXy530320dai1LcPG8cablnbGxUHq9TWm8DVK2/kyPyihpvatvbCKwY4i3q9RpwmHEg37EOOv9D2/h+6R88uGz+LLopWUFRD27iseWh79g276XCwedNKe7+HskLvzZo+t4UPiOpTH+Ki3nC1T1/PvCoMtC7WqdMYCg5ft55mX/90PCguSqny6xGsL5rAdxLIawbvph3W5gtVjq0CrHxAVJcWiKio7o8ELfsQlJp9yDH0TtdUtPi1mQ6FDstJheFIDTnKjHkCg2u3MmWyHxH1qCJMfZh3Pquo55IeNo4hx/nnokIpnsfsyuOUQ+/8otrqFrWxRopJ1AsK7CwRpJBxs0QIhR7bZvn1LKIesgG6tg89MeYUNcytNotkQlTnku00IZw0BEb4W8UGLVG3ZB4wJt0ZROFnlg64NslcmNlFdZsaDtgZyiEvj0XxyXn2coPt2Kn8euMPDLdw++OBZXebRRSpr6dDVOdDeD83DkH65VASWzir8WaOuIky/8KkRmc6bySHukNMc1G08xxSqFDjqYVWkJFOQ0Vy9K9EnQVjULQGOqaT7WyiiP4bHoqZ0SSYNP9qBPHzMtoOO/EYN1GThR2QvyVOka9N7nJmrMlcYosUJYgUJYgUJYgUJYgUJYgUJYgUJQTwF16l6XuCEWwOAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NSelectItem.Target>
-                    </uix:NSelectItem>
-                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  Status'" sap:VirtualizedContainerService.HintSize="337.6,165.6" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="[CurrentRow.Item(&quot;Status&quot;).ToString]">
+                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'DIV'" sap:VirtualizedContainerService.HintSize="337.6,165.6" sap2010:WorkflowViewState.IdRef="SetValue_4" Text="[CurrentRow.Item(&quot;ZoneDescription&quot;).ToString]">
                       <ui:SetValue.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a115b827-9b24-4858-b65d-10f97f30fad5" InformativeScreenshot="54e274f246ee390601891abb0738e947" Selector="&lt;webctrl id='Status' tag='INPUT' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c5a189bd-b30b-42b7-a721-15398f1be335" InformativeScreenshot="1b5188b9a30e1283c865b3b7c6d6b13f" Selector="&lt;webctrl id='ZoneDescription' tag='INPUT' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
@@ -337,14 +211,14 @@
                         </ui:Target>
                       </ui:SetValue.Target>
                     </ui:SetValue>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'Create'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Create'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
                       <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Devices/Create" DesignTimeRectangle="332, 828, 90, 48" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Create'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='btn btn-primary' aaname='Create' check:text='Create' /&gt;" Guid="61e6ac3f-d8c9-40b4-8e79-2b3813247134" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAA0CAYAAAADvY9SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARnSURBVHhe7ZxNa+NGGMf7MUq3H6FfIJ8g9AvsLYdCTz0sPfSWS3FPC3vZQyD4EsqyoZQlJofm0rjgrkkXYTZ0vYYguhuUF68jY4ywHb8h/p1nNLIleWTHWcsD4Xngd9GMRqOfZp4ZGeQvwGEkWLyhYPGGYkb8wT8X+PaXv/D19wf48rtXzD0hf+SRfOoiJv7n3/7FNz8e4asf/sSjJyXB38y9KUmP5JO8JmMinp4MVWLhq6YkvSZH/kQ8TYtgpOtOZj4H8kp+ozERTzmJR3tWlKTfaEzE04KgP4lZBeQ3Gix+TbB4Q7B4Q7B4Q7B4Q7B4Q7B4Q7B4Q7B4Q7B4Q7B4Q7B4Q6xN/ObLaxTrQ3gjdYEwRj6qr/XnPGTWIP4tntaGGFCjvg+v1UPVbqJQ82DXe3C6Puw3uvPWwRn2z8VguPqkKcuWjMVbyNlj2d7AbWL7ma6OST6ifCs613ho4g/a8ERbA3FjW7py4zxI8Rb2rqilPo7yunIdUxFbx204Mj8hkoosbFsduFRHhdfuoPC7FWmDeKvq+aqWiNs+ysfvJ3XCmZiMWNrLX6LYGGMQNjMaw65drmQQZSj+AhUS12risbZchxLvDeF6HnZ/jQqdpi3PbePIukHh1IMjF+shii8j7bzpBfUa03qurDdG+SCo8/jwGgWrBZv6KK5VoHqC52E7+U+w6ZzRENVaUFasq7R5dYmN8Fr3JEPxouOincH5haYsDSU+KZJQacuzP8ZvOn8Dh0akkDE5dtJGJTK6iY3jjlzg6fzp8bRU8w77DXHc76MQm63hwxf9exE9vjyZi4/f6CKUiNs2comy5+dkV6StnfhxklFw9efECfoTl5wifqcJRxzWDprDYAB87k4sc/Fwb5aYlkqE5hw5AudGD/uT+pZMJcUPPdgtkaNFkp7k6buIV7NrXiw3oGbJUPwZitR7v4O9nK5cR9rUV+JHYoFUuXiWC/wk677Hfl1Zvh2Kd4UOyqei/ETkeTq2hHjPSV5jyt7hu/g5S5KheLGAVfqyrZm8nEq6+N1whzSTahKkrQU5sRZQE3cR/6IlH9Jy69NyZCpe3liXWvPh1s6xqa0TJV38RqlDDS1+iCfBjsax4lvMrdNgEGjFd9vYjtR99MRWszW5uK6OjMULxF64EiZMfwyn7qFI01X9ZEB77elClS5eppBGkEIGXidoI2ynHWljR43s5DaQtqh0PNa2pdYOH86ZqHsq0tJJULahFlHqs00/ccjrNVF2+mL3uWghX0z24iX0QiP23N1whVPhi0VP5OHiH2G9eeIFuTPs1nrxH9rES43rNPE0MjLlyxe1o8JriPJnul2NIH+NqpyVIkR/KsfTss1XN6i2Iy9a1N9uD+XX/y2xYdCzJvFMEhZvCBZvCBZvCBZvCBZvCBZvCBZvCBZvCBZvCBZviFTx/Llllsz53JI/MM6OuR8Y8yf1WbHgk3oK/hOJVXLHP5EIg54MTQvKSbQgMPeD/JHH5EgPY0Y8xzoC+B88doTkmm0SOAAAAABJRU5ErkJggg==" InformativeScreenshot="dd3f7187e402c55dae05b7f4d0c42fbc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create Device - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Zones/Create" DesignTimeRectangle="332, 620, 90, 48" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Create'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='btn btn-primary' aaname='Create' check:text='Create' /&gt;" Guid="0b227ec7-dde1-4e84-827c-f280e0897aee" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAA0CAYAAAADvY9SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARiSURBVHhe7ZzPa9tIFMf3r9gt+yf0D8hfEOg/0FtOC3vqoSy95dSSPfTSQy8h4ENgKYal1C05BPagPRQt2ZIYfDCGRqV4RYyxjdPIQY5/Ib47bzSyJXlkx6nlgfAefC6a0ZP08cybsUH+ARxGgsUbijnxpX8v8Oj3j/j51yP8+MsH5o6QP/JIPnWREP/8zyoe/vYXfnryNx48tQX/MHfGlh7JJ3lNx1Q8fTLUiYWvG1t6TY/8qXiaFuFI153MfA/klfzGYyqeahKP9rywpd94TMXTgqA/iVkH5DceLH5DsHhDsHhDsHhDsHhDsHhDsHhDsHhDsHhDsHhDsHhDsHhDbEz8drEJqzmCN1YXiGIcoGrrz7nPbEB8BS9rIwwpaRDAu+yj6nRRql3Dafbh+gGcT7rzNsE5inUxGBotTVu+5Cy+jBfOROYbdrrYfaXrY5I67Btxc637Jv69B0/kGooH29G1G+deii/jsEGZBjgu6Np1zETsWB5cWZ8QK0Vl7J76aFMfFd6Vj9LbciwHUVH9AtVLxM0AtlWb9olmYjoSZa/QgNWaYBilGU/g1BprGUQ5ir/AGYm77OKxtl2HEt8bod27xsEfcaGzsuV1PByfdlCqXMOVi/UIVjGW51M/7Nea9WvLfhPY78M+j4+aKJ1+g0P3KK5Von6C11GeQgsOnTMeoVoL26ymKpuNBraia92RHMWLGxd5hvULTVsWSnxaJKHKlufUkw9d6MClESlkTI+deDiLjW5iy/LlAk/nz45nlZoqii1xPBiglJit0Ycv7u9N/Pjq5C4++aDLUCJuPLxItb2uk11RtvaTx0lGqaM/J0l4P0nJGeL3u3DFYe2gOQoHwPfuxHIXj05nhWmpRGjOkSNwYfRRnPYvy1Jife3DuRQ1WhTpaZ2+jXg1uxbFagNqnhzFn8PqiUSBj8M9XbuOrKmvxI/FAqlq8TwXeCb71lBsKss3I/FdwYddEe0nos7TsRXEe276GjMOj6rJc1YkR/FiASsPZK65upxJtviDaIc0V2pSZK0Fe2ItoBS3Ef/mm/yQVlufViNX8fLBfMoWoF37D9vaPnGyxW99lImWf4gn4Y7GPU1uMXcq4SDQivc97Mb6Pnj6Rc3W9OK6PnIWLxB74TN6CIpgArd5DYumq/rJgPbas4UqW7wsIa2whAx7fpgjynMVy7GvRnZ6G0hbVDqeyF1Wa0cA97PoWxFl6SRs21KLKN2zQz9xyOt1YbsDeL1lC/ly8hcvoS80Ys/tRyucikAseqIOW8dRv0XiBXvnOKj1kz+0iS81bbeLl7GRKb98UR4VXku0v9LtagSFJqrhZJL3c2bN2rbfdVC9CvfuMuh+/T5s++sKGwY9GxLPpGHxhmDxhmDxhmDxhmDxhmDxhmDxhmDxhmDxhmDxhsgUz69b5smC1y35BeP8WPiCMb9SnxdLXqmn4D+RWCe3/BOJKOiToWlBNYkWBOZukD/ymB7pUcyJ59hMsHgjAfwPFoh3KCnU7TEAAAAASUVORK5CYII=" InformativeScreenshot="8479c76ed067e2ecd61d9b2c519208c1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create Zone - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'Back to List'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Back to List'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
                       <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Devices/Details/0d6cd55e-0bde-4540-8419-f324673c0c03" DesignTimeRectangle="454, 609, 100, 27" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Back to List'" FullSelectorArgument="&lt;webctrl aaname='Back to List' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Back to List' tag='A' type='' class='' check:innerText='Back to List' /&gt;" Guid="f2cdff28-d7e9-4167-b6a7-ae8dc63b662a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAfCAYAAAALO4jYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATpSURBVGhD7ZjBayJJFMYX8md4zXFuc/SaY4455moIBCGEyLAwCQNBWAKyEFZCDpHAkAwMQViQhmXAg7AIHhKGAV0VFTWJmNlEzIxRnMi3X9nV2t1q2xiz9EB/UGBXv66ufr+q9175C1w5Wi4gh8sF5HC5gBwuF5DD5QJyuFxADpcLyOFyATlcLiCHyzGAarEsFtaKSMrrn069rwhvp7EYrKImu+YhI6CLIp2UNraNDFYOKkg3n6TRy8jRgGoVrNAXK7Gm7BijTh2h/wuQ70MN8RTbpzJCBzm8WieorSIuO9LuBfQ8QN+R/JDH8vu6vJ6z7ACaWfdQ6GP/X+PHHgsoeCGvpdqpAl6z3x//Lnvmr+cBauJsl4vo6GcEVEfQYmxbgF52gqpcQM8B9KXEHZRBKC2vNTW/InqUw5J/mK98JzU0evK+XmZbhs3l/SqK8vZYQNcVrNLO87aEy5bsM0l9To6pa4Zv6DYRP81jZWt437ubRzj1IA2myBag8Yukna8iGMyoaYJjLG7lEPqsRqLk0XA+w5bFmS6JTQH0A43CFXb4YV6+uC17VakT8mznEP6k5qxoJAsPn/dGTLbS0QsbWQRjN2p+S1QQfEfHS5MRQP/e9N/r2WbfBDhC7etbjlfFzhuO/1tZHZstfS8NWlyhTN4L61w8p1fDdwtncq6rsYY0tNCsgNIlePnc0u9lKP15XSG8n4VPjtMoiL4yfMLmsCrnfouaLtePBWRuy5Eb1LrSZqAmlPMb0255hMJttrBWQFLrZ/kZEiuXRYaVow2AhFNtPDPUpBDX4SrNEE4OZ9fmKvRRvbeWQ1SDOUkzArqMmHzRF+fR1c9lhhA3qOJI/DhSwKoISxv8yML0Mk51tG6bckyPCI9frMv0AaDWHY73JBzbpf0EQJ0bBPg9r09uZYdJ0vGrypRQNyOg4rn4pgyCKaviah45qNdQX75VgiENdb8hnaogTIj+3QyWGEpEiNMDUh2fR3wKWw3sqoCzmUd0ZMVbaQIg6djA35NerjrHw5BsqVlDXOsWYdHHZxffMOcl7tAYiUTzAESN7IzrKnwbfLkoDA6KCJ2r8V1hHhoFZN7mo9JAht6LPJZhSW8jNwzkUEB9MY+nqwgx9yxyDBGJjIvvRQA9qRXIJh1vyhHFP42AGvE8r8dUgCap44scpOWGaaFBrwnOsRnipp7vngVIp/oVApu02a3o/m2YB6DuHcK/cuBBiHtAVISit5VBmdxXj/lD2Ol3WotOEqXyHm0tdtEQEMWQGg2KcQjp4rF/31rSOXvmv1k6iP/BfqsiYT0P5YWKBHR/yB+auLAPabM5rF6n7WJbRcKKCGUsU/XOUhMgK7zDilpCJsoIbDM0cSsbAFFtjivKTX1JLv5GCliV2SLviUVgC5Lc0bTdiYm5lBD9LG9pFeHYMtvmApCAhqWwvmll8SggMaflfc5F2irneSyJ89/HO2khJJ/jIgonaBdjSa7z3VhAhiYG5EviddNq6D0geZKDV8CjnUiCxzyAFQ2hUNMTGv+YD2xZ+E/r0DLNCCAh3RlmqiNFQn7HRSDmzPPWcV72C7XuoXCuxkNyCUrFzu6kJKCBTwxN+9ZRQLVkAb5B4ZTGKy7QUOLedJ6krhn6xDmONh5/AYpuoxoBuXKcXEAOlwvI4XIBOVwuIIfLBeRoAf8B0aT0CkzyFEcAAAAASUVORK5CYII=" InformativeScreenshot="cf1c9d42a9c2e4815974fdb2e4fb6680.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Device Details - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Zones/Details/3676b39d-8e58-4a8c-8f96-b7814a434d99" DesignTimeRectangle="454, 489, 100, 27" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Back to List'" FullSelectorArgument="&lt;webctrl aaname='Back to List' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Back to List' tag='A' type='' class='' check:innerText='Back to List' /&gt;" Guid="9d65dae9-7076-40f5-b338-c9c68d1c60b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAfCAYAAAALO4jYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATpSURBVGhD7ZjBayJJFMYX8md4zXFuc/SaY4455moIBCGEyLAwCQNBWAKyEFZCDpHAkAwMQViQhmXAg7AIHhKGAV0VFTWJmNlEzIxRnMi3X9nV2t1q2xiz9EB/UGBXv66ufr+q9175C1w5Wi4gh8sF5HC5gBwuF5DD5QJyuFxADpcLyOFyATlcLiCHyzGAarEsFtaKSMrrn069rwhvp7EYrKImu+YhI6CLIp2UNraNDFYOKkg3n6TRy8jRgGoVrNAXK7Gm7BijTh2h/wuQ70MN8RTbpzJCBzm8WieorSIuO9LuBfQ8QN+R/JDH8vu6vJ6z7ACaWfdQ6GP/X+PHHgsoeCGvpdqpAl6z3x//Lnvmr+cBauJsl4vo6GcEVEfQYmxbgF52gqpcQM8B9KXEHZRBKC2vNTW/InqUw5J/mK98JzU0evK+XmZbhs3l/SqK8vZYQNcVrNLO87aEy5bsM0l9To6pa4Zv6DYRP81jZWt437ubRzj1IA2myBag8Yukna8iGMyoaYJjLG7lEPqsRqLk0XA+w5bFmS6JTQH0A43CFXb4YV6+uC17VakT8mznEP6k5qxoJAsPn/dGTLbS0QsbWQRjN2p+S1QQfEfHS5MRQP/e9N/r2WbfBDhC7etbjlfFzhuO/1tZHZstfS8NWlyhTN4L61w8p1fDdwtncq6rsYY0tNCsgNIlePnc0u9lKP15XSG8n4VPjtMoiL4yfMLmsCrnfouaLtePBWRuy5Eb1LrSZqAmlPMb0255hMJttrBWQFLrZ/kZEiuXRYaVow2AhFNtPDPUpBDX4SrNEE4OZ9fmKvRRvbeWQ1SDOUkzArqMmHzRF+fR1c9lhhA3qOJI/DhSwKoISxv8yML0Mk51tG6bckyPCI9frMv0AaDWHY73JBzbpf0EQJ0bBPg9r09uZYdJ0vGrypRQNyOg4rn4pgyCKaviah45qNdQX75VgiENdb8hnaogTIj+3QyWGEpEiNMDUh2fR3wKWw3sqoCzmUd0ZMVbaQIg6djA35NerjrHw5BsqVlDXOsWYdHHZxffMOcl7tAYiUTzAESN7IzrKnwbfLkoDA6KCJ2r8V1hHhoFZN7mo9JAht6LPJZhSW8jNwzkUEB9MY+nqwgx9yxyDBGJjIvvRQA9qRXIJh1vyhHFP42AGvE8r8dUgCap44scpOWGaaFBrwnOsRnipp7vngVIp/oVApu02a3o/m2YB6DuHcK/cuBBiHtAVISit5VBmdxXj/lD2Ol3WotOEqXyHm0tdtEQEMWQGg2KcQjp4rF/31rSOXvmv1k6iP/BfqsiYT0P5YWKBHR/yB+auLAPabM5rF6n7WJbRcKKCGUsU/XOUhMgK7zDilpCJsoIbDM0cSsbAFFtjivKTX1JLv5GCliV2SLviUVgC5Lc0bTdiYm5lBD9LG9pFeHYMtvmApCAhqWwvmll8SggMaflfc5F2irneSyJ89/HO2khJJ/jIgonaBdjSa7z3VhAhiYG5EviddNq6D0geZKDV8CjnUiCxzyAFQ2hUNMTGv+YD2xZ+E/r0DLNCCAh3RlmqiNFQn7HRSDmzPPWcV72C7XuoXCuxkNyCUrFzu6kJKCBTwxN+9ZRQLVkAb5B4ZTGKy7QUOLedJ6krhn6xDmONh5/AYpuoxoBuXKcXEAOlwvI4XIBOVwuIIfLBeRoAf8B0aT0CkzyFEcAAAAASUVORK5CYII=" InformativeScreenshot="eab5ea6caccfd44f9552bbb7bf8ed461.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zone Details - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
                   </Sequence>
