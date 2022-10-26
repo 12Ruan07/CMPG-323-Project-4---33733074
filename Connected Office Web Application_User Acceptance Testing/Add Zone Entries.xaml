@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1288.8,3292</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1576.8,3292</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Add_Zone_Entries_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="72">
@@ -105,7 +105,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_Zone_Entries" sap:VirtualizedContainerService.HintSize="1299.2,3227.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_Zone_Entries" sap:VirtualizedContainerService.HintSize="1587.2,3227.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ZoneTableData" />
     </Sequence.Variables>
@@ -114,14 +114,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange AddHeaders="True" DataTable="[ZoneTableData]" DisplayName="Read Range Zone Sheet" sap:VirtualizedContainerService.HintSize="1236.8,97.6" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="B1" SheetName="Zone" WorkbookPath="D:\Connected Office Test Data.xlsx" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Home Page - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="1236.8,2966.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V2">
+    <ui:ReadRange AddHeaders="True" DataTable="[ZoneTableData]" DisplayName="Read Range Zone Sheet" sap:VirtualizedContainerService.HintSize="1524.8,97.6" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="B1" SheetName="Zone" WorkbookPath="D:\Connected Office Test Data.xlsx" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Home Page - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="1524.8,2966.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1203.2,2740" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1491.2,2740" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="ruan.burger@gmail.com" Name="userName" />
             </Sequence.Variables>
@@ -130,12 +130,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Zones'" sap:VirtualizedContainerService.HintSize="1140.8,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Zones'" sap:VirtualizedContainerService.HintSize="1428.8,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Zones/Create" DesignTimeRectangle="9, 338, 285, 50" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Zones'" FullSelectorArgument="&lt;webctrl aaname='Zones' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zones' tag='A' type='' class='nav-link text-dark' check:innerText='Zones' /&gt;" Guid="fa0f0f2d-1846-4cf4-8d41-2277b70ba4b9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASEAAAA2CAYAAACIuS+MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASgSURBVHhe7dvRS1tXHMDx/VG+6IsDRxgVJnkoFwqDIQgdllbUlzWsIGWBFREFSx8MA31oGFQEZRAKFiEPpqXEBwkYC+JAAsOCbNDn347J75d7klzNIt4zkO8PPg87ObnmZV/uuUm/shE3jS9f5OSfvwEgdTaaICIEICwbTRARAhCWjSaICAEIy0YTRIQAhGWjCSJCAMKy0QQRIQBh2WiCiBCAsGw0QUQIQFg2miAiBCAsG00QEQIQlo0miAgBCMtGE0SEAIRlowkiQgDCstEEESEAYdlogogQgLBsNEFECEBYNpogIgQgLBtNEBECEJaNJogIAQjLRhNEhACEZaMJIkIAwrLRBKURobIsjHwtQ//FUjnh/QDuMhtN0P8boYnfDhLeD+Aus9EEhTyONWQzn4kjFC3L7kXSPgB3mY0mKFyE6rvPZLh9F5SVxYPkfQDuNhtNUKAIne3IzJgFyB3DVstST9hX3S/Kwnwk39jesXG5P/+LbBw0Ovfuv2hfa+hJUSpHO+59WRltrmVkYn5Ztv/09qvDgzcd1x+NJiX3uizVrjuy6l5Bcj2fY1lKjc59AAZnowkKEaFTKT71j2EvpPS5e09DSquRd6fULSMP1t7H4fIjlM3KhBe4tsl1qXh/o7L1WCPVa3jWhUxDVHnz8IrP8VAKJ/H1ANyMjSYo/Qgd/jHXcQzLfzjv2dNxVIueyab+z17/tCO5KH5v+wjnR2hkXHKl49b+2rpMtdcjeVXT/Ufr8sDWXQS3z9zaxbmUf7fgZCS3d/m5ypJvBy2SlY/6WT8fS+l1QTYT7q4ADMZGE5RyhE6KMuXdpSQfwxruTinek9vtjFTV3ZnYa8P2lb4foR/9O55T2ZiNr7Ww31rfXRtvr3Vcv+GOibo+tPjOrfnf7Lm7r9V3UvnLrg3gNthogtKM0LELQr9j2CX/7iPhyNP1/Kd61ZoqLem604pQZ5iu1LzOuTsWZnteG52ck5XyafyZANyYjSYovQhVt/xnK1kXhK6Hy23+3UcaETqWwpN47Urt6zSk8nZZpiMvoE0ZmdpqHfsA3JyNJiilCH3qOoa5Y1TSt2Et/p2KPZuJX/ePY/fW3rfWB4qQW1uNg9J93LvW2YFs/OrdGc12/i0Ag7PRBKUQoQt359F9DOvzXKXj4bU9OHbr9VpRZrK6PvJ9/KB5wAjV3f57tv/ywfdRHKL6UVlePS9IqfnfZVl5vi4le/3ivPmtWvtvPd2RQ30fgJux0QTdfoQOSz95x7A+vCNQaan3WUwsI9P+UWjACPW/vgtlc981/+RkLJLFhG/2AAzGRhN0+xHyj099dQWk50eC32blh59fymbt+h8r9o9QS3Xvpcw8sh81Opc/Qnw0Jytva3pcrEkx/1jue8+Dhr+LZDpfkG1+IwTcChtNUHoPpgEgiY0miAgBCMtGE0SEAIRlowkiQgDCstEEESEAYdlogogQgLBsNEFECEBYNpogIgQgLBtNEBECEJaNJogIAQjLRhNEhACEZaMJIkIAwrLRBBEhAGHZaIKIEICwbDRBRAhAWDaaICIEICwbTRARAhCWjSaICAEIqzUi/wILdq58c91haQAAAABJRU5ErkJggg==" InformativeScreenshot="0c47b2b3f2372eaf9401a6ba1caab92b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create Zone - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ZoneTableData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1140.8,1244.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ZoneTableData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1428.8,1244.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -190,7 +190,7 @@
                 </ActivityAction>
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
-            <uix:NCheckState DisplayName="Check App State 'Zones Zone Name'" sap:VirtualizedContainerService.HintSize="1140.8,1123.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Zones Zone Name'" sap:VirtualizedContainerService.HintSize="1428.8,1123.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f4abe85c-eea8-4f77-a460-e87077788dca" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="688,895.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -234,12 +234,45 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,116" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="688,895.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="625.6,770.4" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+                    <ueab:ExcelProcessScopeX.Body>
+                      <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,674.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="529.6,551.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="D:\Connected Office Test Data.xlsx">
+                            <ueab:ExcelApplicationCard.Body>
+                              <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,272" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ueab:FillRangeX DestinationRange="[Excel.Sheet(&quot;Test Results&quot;).Range(&quot;B2:B10&quot;)]" DisplayName="Fill Range" sap:VirtualizedContainerService.HintSize="433.6,148.8" sap2010:WorkflowViewState.IdRef="FillRangeX_2" Value="[&quot;FALSE&quot;]" />
+                                </Sequence>
+                              </ActivityAction>
+                            </ueab:ExcelApplicationCard.Body>
+                          </ueab:ExcelApplicationCard>
+                        </Sequence>
+                      </ActivityAction>
+                    </ueab:ExcelProcessScopeX.Body>
+                  </ueab:ExcelProcessScopeX>
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
